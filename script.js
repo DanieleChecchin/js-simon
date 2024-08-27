@@ -11,6 +11,8 @@ SCALETTA
 - Creo un timer d 30 secondi -V-
 - Faccio scomparire i numeri -V-
 - Faccio comparire 5 input diversi vuoti dove inserirà i numeri l'utente -V-
+- Faccio comparire il bottone per confermare -V-
+- Prendo i valori degli input inseriti dall'utente -V-
 - Comparo i numeri inseriti dall'utente con quelli usciti in precedenza
 - Creo un messaggio che indici quali numeri sono stati indovinati e quanti sono
 */
@@ -21,6 +23,30 @@ const countdownElement = document.getElementById('countdown');
 const numbersElement = document.getElementById('numbers');
 const inputsElement = document.getElementById('inputs');
 const playButton = document.getElementById('start');
+const numberField1 = document.getElementById('field1');
+const numberField2 = document.getElementById('field2');
+const numberField3 = document.getElementById('field3');
+const numberField4 = document.getElementById('field4');
+const numberField5 = document.getElementById('field5');
+
+// Funzione per prendere i numeri inseriti dall'utente
+
+const userNumbers = [];
+
+const userChoices = () => {
+    playButton.addEventListener('click', function () {
+
+        // Prendo i numeri inseriti dall'utente
+        const number1 = numberField1.value;
+        const number2 = numberField2.value;
+        const number3 = numberField3.value;
+        const number4 = numberField4.value;
+        const number5 = numberField5.value;
+
+        // Li inserisco in un array
+        userNumbers.push(number1, number2, number3, number4, number5);
+    })
+}
 
 // Creo un array vuoto
 const numbers = [];
@@ -47,8 +73,9 @@ const countdown = setInterval(() => {
         numbersElement.classList.add('none'); // Faccio scomparire i 5 numeri da ricordare
         inputsElement.classList.remove('none');// Faccio comparire i 5 input in cui inserire i numeri 
         playButton.classList.remove('none'); // Faccio comparire il bottone per giocare
-
+        userChoices();
     }
+
 }, 1000);
 
 
