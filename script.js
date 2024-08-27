@@ -6,9 +6,9 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 
 /*
 SCALETTA
-- Creo 5 input diversi nel DOM d-none V
-- Genero 5 numeri casuali e li inserisco nel DOM
-- Creo un timer d 30 secondi
+- Creo 5 input diversi nel DOM con d-none -V-
+- Genero 5 numeri casuali e li inserisco nel DOM -V-
+- Creo un timer d 30 secondi -V-
 - Faccio scomparire i numeri
 - Faccio comparire 5 input diversi vuoti dove inserirà i numeri l'utente
 - Comparo i numeri inseriti dall'utente con quelli usciti in precedenza
@@ -31,19 +31,20 @@ for (let i = 0; i < 5; i++) {
 // Stampo i numeri in Pagina
 numbersElement.innerText = numbers;
 
-// GENERO UN TIMER DA 30 SECONDI
-
 // Imposto i secondi da cui devo partire per il countdown
-let time = 30;
+let time = 10;
 
-// Creo una funzione per il countdown
+// Creo una funzione per il countdown di 30 secondi
 const countdown = setInterval(() => {
     --time; // Decremento di 1 ogni secondo
     countdownElement.innerText = time; // Aggiorno il valore di time in pagina
     //Creo un if per controllare la fine dei 30 secondi
     if (time <= 0) {
-        clearInterval(countdown);
-        countdownElement.innerText = 'Tempo scaduto !';
+        clearInterval(countdown); // Fermo il countdown
+        countdownElement.innerText = 'Tempo scaduto !'; // Stampo in pagina il messaggio di fine tempo
+        numbersElement.classList.add('none')
+
+
     }
 }, 1000);
 
