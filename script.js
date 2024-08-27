@@ -20,6 +20,7 @@ SCALETTA
 const countdownElement = document.getElementById('countdown');
 const numbersElement = document.getElementById('numbers');
 const inputsElement = document.getElementById('inputs');
+const playButton = document.getElementById('start');
 
 // Creo un array vuoto
 const numbers = [];
@@ -45,7 +46,7 @@ const countdown = setInterval(() => {
         countdownElement.innerText = 'Tempo scaduto !'; // Stampo in pagina il messaggio di fine tempo
         numbersElement.classList.add('none'); // Faccio scomparire i 5 numeri da ricordare
         inputsElement.classList.remove('none');// Faccio comparire i 5 input in cui inserire i numeri 
-
+        playButton.classList.remove('none'); // Faccio comparire il bottone per giocare
 
     }
 }, 1000);

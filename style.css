@@ -32,3 +32,12 @@
     font-weight: bold;
     margin-bottom: 20px;
 }
+
+.button {
+    text-align: center;
+}
+
+#start {
+    padding: 10px 20px;
+    margin-top: 20px;
+}
