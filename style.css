@@ -10,5 +10,17 @@
 
 .container{
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 300px auto;
+}
+
+#inputs{
+    text-align: center;
+}
+
+.none{
+    display: none;
+}
+
+#numbers{
+    text-align: center;
 }
