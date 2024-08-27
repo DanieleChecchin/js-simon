@@ -17,17 +17,34 @@ SCALETTA
 
 
 // Recupero gli elementi dal DOM
+const countdownElement = document.getElementById('countdown');
 const numbersElement = document.getElementById('numbers');
 
 // Creo un array vuoto
 const numbers = [];
 
 // Genero i 5 numeri casuali e li inserisco nell'array
-for(let i = 0; i < 5; i++){
+for (let i = 0; i < 5; i++) {
     let randomNumbers = Math.floor(Math.random() * 100) + 1;
-    console.log(randomNumbers);
     numbers.push(randomNumbers);
 }
-console.log(numbers);
+// Stampo i numeri in Pagina
 numbersElement.innerText = numbers;
+
+// GENERO UN TIMER DA 30 SECONDI
+
+// Imposto i secondi da cui devo partire per il countdown
+let time = 30;
+
+// Creo una funzione per il countdown
+const countdown = setInterval(() => {
+    --time; // Decremento di 1 ogni secondo
+    countdownElement.innerText = time; // Aggiorno il valore di time in pagina
+    //Creo un if per controllare la fine dei 30 secondi
+    if (time <= 0) {
+        clearInterval(countdown);
+        countdownElement.innerText = 'Tempo scaduto !';
+    }
+}, 1000);
+
 
