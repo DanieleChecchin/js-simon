@@ -9,8 +9,8 @@ SCALETTA
 - Creo 5 input diversi nel DOM con d-none -V-
 - Genero 5 numeri casuali e li inserisco nel DOM -V-
 - Creo un timer d 30 secondi -V-
-- Faccio scomparire i numeri
-- Faccio comparire 5 input diversi vuoti dove inserirà i numeri l'utente
+- Faccio scomparire i numeri -V-
+- Faccio comparire 5 input diversi vuoti dove inserirà i numeri l'utente -V-
 - Comparo i numeri inseriti dall'utente con quelli usciti in precedenza
 - Creo un messaggio che indici quali numeri sono stati indovinati e quanti sono
 */
@@ -19,6 +19,7 @@ SCALETTA
 // Recupero gli elementi dal DOM
 const countdownElement = document.getElementById('countdown');
 const numbersElement = document.getElementById('numbers');
+const inputsElement = document.getElementById('inputs');
 
 // Creo un array vuoto
 const numbers = [];
@@ -42,7 +43,8 @@ const countdown = setInterval(() => {
     if (time <= 0) {
         clearInterval(countdown); // Fermo il countdown
         countdownElement.innerText = 'Tempo scaduto !'; // Stampo in pagina il messaggio di fine tempo
-        numbersElement.classList.add('none')
+        numbersElement.classList.add('none'); // Faccio scomparire i 5 numeri da ricordare
+        inputsElement.classList.remove('none');// Faccio comparire i 5 input in cui inserire i numeri 
 
 
     }
